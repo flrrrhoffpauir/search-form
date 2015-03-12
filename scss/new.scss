@@ -1,0 +1,129 @@
+// VARIABLES
+// ------------------------------------------------------------------
+$blue: 			#5BABE3;
+$border:		#E1E1E1;
+$button-bg:		#FECB00;
+$form-border:	#A6A6A6;
+$gray:			#666666;
+$gray-dark: 	#686868;
+$gray-light:	#999999;
+$gray-lighter:	#838383;
+$green:			#73B74E;
+$radio-bg:		#F2F2F2;
+
+$font_base:		"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$border_radius:	4px;
+
+
+// MIXINS
+// ------------------------------------------------------------------
+@mixin border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+// CLASSES
+// ------------------------------------------------------------------
+.sidebar-module--find-resources,
+.sidebar-module--partner-option {
+	border: 1px solid $border;
+	border-radius: $border_radius;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.07);
+	clear: right;
+	color: $gray-lighter;
+	float: right;
+	margin-bottom: 20px;
+	overflow: hidden;
+	width: 227px;
+
+	input[type="text"] {
+		border: 1px solid $form-border;
+		color: #000000;
+		font-family: $font_base;
+		font-size: 12px;
+		margin-top: 0;
+		padding: 4px;
+	}
+
+	input[type="radio"] {
+		display: none;
+
+		+ label {
+			border: 1px solid $form-border;
+			border-radius: 2px;
+			color: #000000;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 12px;
+			margin-right: 5px;
+			padding: 1px 7px;
+			@include border-box;
+		}
+
+		&:checked {
+			+ label {
+				background-color: #000000;
+				border: 1px solid #000000;
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	input, button {
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.sidebar-module--find-resources {
+	.location-search-form {
+		padding: 16px 19px;
+	}
+
+	.search-filters-group__title {
+		font-family: $font_base;
+		font-size: 12px;
+		font-weight: 100;
+		padding-left: 0;
+	}
+
+	.spatial-search__location {
+		margin-bottom: 20px;
+		width: 100%;
+		@include border-box;
+	}
+
+	button {
+		background-color: $button-bg;
+		border: 0 none;
+		border-radius: $border_radius;
+		cursor: pointer;
+		font-family: $font_base;
+		font-size: 14px;
+		font-weight: bold;
+		margin: 20px 0 0 0;
+		padding: 5px 10px;
+
+		i {
+			margin-right: 5px;
+		}
+	}
+}
+
+.sidebar-module--partner-option {
+	color: #000000;
+
+
+	.search-filters-group {
+		padding: 16px 19px;
+	}
+
+	.search-filter__label {
+		display: block;
+		padding-left: 23px;
+	}
+}
